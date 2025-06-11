@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="container">
+      <div class="temp">
+        <p id="temperature">20°C</p>
+      </div>
+
+      <div class="time_location">
+        <p id="cityName">Delhi</p>
+        <p id="localTime">Time</p>
+      </div>
+
+      <div class="condition">
+        <img id="weatherIcon" src="" alt="weather icon" />
+        <p id="weatherCondition">Mist</p>
+      </div>
+    </div>
+
+    <nav>
+      <form id="weatherForm">
+        <input type="text" id="cityInput" placeholder="Enter a city" class="search_area" />
+        <button type="submit">Submit</button>
+      </form>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
