@@ -12,7 +12,7 @@ window.onload = function () {
       alert("Please enter a city name.");
       return;
     }
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=08f6083b3b9cfb4f6e387ab717b3e78a&units=metric"; //${city}
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=72bbf277f9b1e72aaeae64b2e3efbc7f&units=metric"; //${city}
 
     fetch(url)
       .then(res => {
