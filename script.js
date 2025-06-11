@@ -12,7 +12,7 @@ window.onload = function () {
       alert("Please enter a city name.");
       return;
     }
-    const url = `http://api.weatherapi.com/v1/current.json?key=3c98d7a7c7da446290a185204251006&q=${city}&aqi=no`;
+    const url = `https://api.weatherapi.com/v1/current.json?key=3c98d7a7c7da446290a185204251006&q=${city}&aqi=no`;
 
     fetch(url)
       .then(res => {
