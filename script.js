@@ -12,7 +12,7 @@ window.onload = function () {
       alert("Please enter a city name.");
       return;
     }
-    const url = `https://api.weatherapi.com/v1/current.json?key=3c98d7a7c7da446290a185204251006&q=${city}&aqi=no`;
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=YOUR_API_KEY&units=metric"; //${city}
 
     fetch(url)
       .then(res => {
@@ -24,9 +24,19 @@ window.onload = function () {
       .then(data => {
         console.log(data); // debug
 
-        document.getElementById("temperature").textContent = data.current.temp_c + "°C";
-        document.getElementById("cityName").textContent = data.location.name;
-        document.getElementById("localTime").textContent = data.location.localtime;
+        document.getElementById("temperature").textContent = data.main.temp + "°C";
+        document.getElementById("cityName").textContent = data.name;
+        const timezoneOffset = data.timezone; // in seconds
+
+        // Calculate local time
+        const utcTime = new Date().getTime() + new Date().getTimezoneOffset() * 60000; // UTC in ms
+        const localTime = new Date(utcTime + timezoneOffset * 1000); // Adjust with API offset
+
+        // Format time
+        const formattedTime = localTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+
+        document.getElementById("localTime").textContent = formattedTime;
 
         const weatherIcon = document.getElementById("weatherIcon");
 
