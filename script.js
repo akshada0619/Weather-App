@@ -12,7 +12,7 @@ window.onload = function () {
       alert("Please enter a city name.");
       return;
     }
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=YOUR_API_KEY&units=metric"; //${city}
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=e5a66344f0389a167c7315c72ffdfc24&units=metric"; //${city}
 
     fetch(url)
       .then(res => {
